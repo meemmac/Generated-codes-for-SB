@@ -1,0 +1,22 @@
+{
+"title": "Kadane's Algorithm",
+"subtitle": "Calculate the maximum sub-array sum efficiently",
+"time_complexity": "O(N)",
+"space_complexity": "O(1)",
+"category": "Dynamic Programming",
+"code": [
+    "def max_subarray_sum(nums):",
+    "    if not nums:",
+    "        return 0",
+    "",
+    "    global_max = nums[0]",
+    "    current_max = nums[0]",
+    "",
+    "    for i in range(1, len(nums)):",
+    "        current_max = max(nums[i], nums[i] + current_max)",
+    "        global_max = max(global_max, current_max)",
+    "",
+    "    return global_max"
+],
+"additional_information": "Kadane's Algorithm finds the maximum sum of any contiguous subarray by maintaining both a running maximum ending at each index and the best seen so far."
+}
