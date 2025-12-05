@@ -1,0 +1,24 @@
+{
+"title": "Bellman-Ford Algorithm",
+"subtitle": "Compute shortest paths allowing negative edge weights",
+"time_complexity": "O(V × E)",
+"space_complexity": "O(V)",
+"category": "Graph Algorithm",
+"code": [
+    "def bellman_ford(graph, vertices, start):",
+    "    distance = {v: float('inf') for v in vertices}",
+    "    distance[start] = 0",
+    "",
+    "    for _ in range(len(vertices) - 1):",
+    "        for u, v, w in graph:",
+    "            if distance[u] + w < distance[v]:",
+    "                distance[v] = distance[u] + w",
+    "",
+    "    for u, v, w in graph:",
+    "        if distance[u] + w < distance[v]:",
+    "            raise Exception('Negative weight cycle detected')",
+    "",
+    "    return distance"
+],
+"additional_information": "Bellman-Ford handles negative weights and can detect negative cycles, unlike Dijkstra’s algorithm."
+}
