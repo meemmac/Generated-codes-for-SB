@@ -1,0 +1,33 @@
+{
+"title": "Meet-in-the-Middle (Subset Sum / Cryptographic Technique)",
+"subtitle": "Split problem into two halves, solve each, then combine — reduces exponential exponent",
+"time_complexity": "O(2^{n/2} * poly(n))",
+"space_complexity": "O(2^{n/2})",
+"category": "Divide and Conquer / Exponential Algorithms",
+"code": [
+    "def meet_in_the_middle_subset_sum(arr, target):",
+    "    n = len(arr)",
+    "    a = arr[:n//2]",
+    "    b = arr[n//2:]",
+    "    sums_a = {}",
+    "    for mask in range(1 << len(a)):",
+    "        s = 0",
+    "        for i in range(len(a)):",
+    "            if mask & (1 << i):",
+    "                s += a[i]",
+    "        sums_a.setdefault(s, []).append(mask)",
+    "    sums_b = {}",
+    "    for mask in range(1 << len(b)):",
+    "        s = 0",
+    "        for i in range(len(b)):",
+    "            if mask & (1 << i):",
+    "                s += b[i]",
+    "        sums_b.setdefault(s, []).append(mask)",
+    "    # check combinations",
+    "    for sa in sums_a:",
+    "        if target - sa in sums_b:",
+    "            return True",
+    "    return False"
+],
+"additional_information": \"Useful to cut 2^n brute force to about 2^{n/2}. Widely used in subset-sum, knapsack-like exponential problems and some crypto attacks.\"
+}
