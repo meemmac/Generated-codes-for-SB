@@ -1,0 +1,21 @@
+{
+"title": "Depth-First Search (DFS)",
+"subtitle": "Traverse or explore a graph deeply before backtracking",
+"time_complexity": "O(V + E)",
+"space_complexity": "O(V)",
+"category": "Graph Traversal",
+"code": [
+    "def dfs(graph, start, visited=None):",
+    "    if visited is None:",
+    "        visited = set()",
+    "",
+    "    visited.add(start)",
+    "",
+    "    for neighbor in graph[start]:",
+    "        if neighbor not in visited:",
+    "            dfs(graph, neighbor, visited)",
+    "",
+    "    return visited"
+],
+"additional_information": "DFS is useful for detecting cycles, topological sorting, and solving maze-like problems by recursively exploring deep paths first."
+}
