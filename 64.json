@@ -1,0 +1,19 @@
+{
+"title": "Boykov-Kolmogorov Algorithm",
+"subtitle": "Compute min-cut / max-flow in computer vision problems",
+"time_complexity": "O(V^2 * E) worst case, often much faster in practice",
+"space_complexity": "O(V + E)",
+"category": "Graph / Max Flow",
+"code": [
+    "# Complex algorithm; high-level pseudocode",
+    "def boykov_kolmogorov(graph, source, sink):",
+    "    # Initialize trees from source and sink",
+    "    # Grow trees alternately from source and sink",
+    "    # When trees meet, find augmenting path",
+    "    # Augment flow along the path",
+    "    # Adopt orphan nodes",
+    "    # Repeat until no augmenting paths exist",
+    "    pass"
+],
+"additional_information": "Boykov-Kolmogorov algorithm is specialized for fast max-flow computation in computer vision problems such as image segmentation. Implementation is complex but very efficient in practice."
+}
