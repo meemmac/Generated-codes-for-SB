@@ -1,0 +1,19 @@
+{
+"title": "Ternary Search",
+"subtitle": "Find the maximum or minimum of a unimodal function",
+"time_complexity": "O(log N)",
+"space_complexity": "O(1)",
+"category": "Search / Optimization",
+"code": [
+    "def ternary_search(f, left, right, absolute_precision=1e-5):",
+    "    while right - left > absolute_precision:",
+    "        left_third = left + (right - left) / 3",
+    "        right_third = right - (right - left) / 3",
+    "        if f(left_third) < f(right_third):",
+    "            left = left_third",
+    "        else:",
+    "            right = right_third",
+    "    return (left + right) / 2"
+],
+"additional_information": "Ternary search is used to optimize unimodal functions by reducing the search interval in each step, similar to binary search but dividing into thirds."
+}
