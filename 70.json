@@ -1,0 +1,21 @@
+{
+"title": "Anagram Check (Frequency Map)",
+"subtitle": "Check if two strings are anagrams using character frequency counting",
+"time_complexity": "O(N)",
+"space_complexity": "O(1) if character set is fixed",
+"category": "Strings / Hashing",
+"code": [
+    "def are_anagrams(s1, s2):",
+    "    if len(s1) != len(s2):",
+    "        return False",
+    "    count = [0] * 256  # assuming ASCII",
+    "    for c in s1:",
+    "        count[ord(c)] += 1",
+    "    for c in s2:",
+    "        count[ord(c)] -= 1",
+    "        if count[ord(c)] < 0:",
+    "            return False",
+    "    return True"
+],
+"additional_information": "This method counts the frequency of each character in both strings and compares them. If frequencies match, the strings are anagrams. Very efficient for fixed-size character sets."
+}
