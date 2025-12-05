@@ -1,0 +1,22 @@
+{
+"title": "Detect Cycle in Linked List (Floyd’s Tortoise and Hare)",
+"subtitle": "Detect if a linked list has a cycle using two pointers",
+"time_complexity": "O(N)",
+"space_complexity": "O(1)",
+"category": "Linked List / Two Pointers",
+"code": [
+    "class ListNode:",
+    "    def __init__(self, val=0, next=None):",
+    "        self.val = val",
+    "        self.next = next",
+    "def has_cycle(head):",
+    "    slow = fast = head",
+    "    while fast and fast.next:",
+    "        slow = slow.next",
+    "        fast = fast.next.next",
+    "        if slow == fast:",
+    "            return True",
+    "    return False"
+],
+"additional_information": "Floyd’s Tortoise and Hare algorithm uses two pointers moving at different speeds. If there is a cycle, the two pointers will eventually meet."
+}
