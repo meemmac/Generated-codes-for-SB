@@ -1,0 +1,25 @@
+{
+"title": "Rabin-Karp String Matching",
+"subtitle": "Search for a pattern in a text using hashing",
+"time_complexity": "O(N + M) average, O(N × M) worst-case",
+"space_complexity": "O(1)",
+"category": "String / Pattern Matching",
+"code": [
+    "def rabin_karp(text, pattern, prime=101):",
+    "    n, m = len(text), len(pattern)",
+    "    d = 256",
+    "    h = pow(d, m-1, prime)",
+    "    p_hash = sum([ord(pattern[i]) * pow(d, m-1-i, prime) for i in range(m)]) % prime",
+    "    t_hash = sum([ord(text[i]) * pow(d, m-1-i, prime) for i in range(m)]) % prime",
+    "",
+    "    for i in range(n - m + 1):",
+    "        if p_hash == t_hash and text[i:i+m] == pattern:",
+    "            return i",
+    "        if i < n - m:",
+    "            t_hash = (d*(t_hash - ord(text[i])*h) + ord(text[i + m])) % prime",
+    "            t_hash = (t_hash + prime) % prime",
+    "",
+    "    return -1"
+],
+"additional_information": "Rabin-Karp uses a rolling hash to compare the pattern hash with text substrings, efficiently detecting matches with minimal character comparisons."
+}
