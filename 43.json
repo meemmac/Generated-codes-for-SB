@@ -1,0 +1,27 @@
+{
+"title": "Pollard's Rho (Integer Factorization)",
+"subtitle": "Heuristic algorithm to find a nontrivial factor of a composite number",
+"time_complexity": "Expected roughly O(n^0.25) for small factors",
+"space_complexity": "O(1)",
+"category": "Number Theory / Factorization",
+"code": [
+    "import random",
+    "import math",
+    "def pollards_rho(n):",
+    "    if n % 2 == 0:",
+    "        return 2",
+    "    if n % 3 == 0:",
+    "        return 3",
+    "    while True:",
+    "        c = random.randrange(1, n)",
+    "        f = lambda x: (x * x + c) % n",
+    "        x, y, d = 2, 2, 1",
+    "        while d == 1:",
+    "            x = f(x)",
+    "            y = f(f(y))",
+    "            d = math.gcd(abs(x - y), n)",
+    "        if d != n:",
+    "            return d"
+],
+"additional_information": "A randomized method that finds nontrivial factors. Practical for numbers with small factors; combine with trial division and Miller–Rabin."
+}
