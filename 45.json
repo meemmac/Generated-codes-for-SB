@@ -1,0 +1,26 @@
+{
+"title": "Fast Fourier Transform (Cooley–Tukey)",
+"subtitle": "Compute discrete Fourier transform (DFT) in O(n log n)",
+"time_complexity": "O(n log n)",
+"space_complexity": "O(n)",
+"category": "Algorithms / Signal Processing / Number Theory",
+"code": [
+    "import cmath",
+    "def fft(a):",
+    "    n = len(a)",
+    "    if n == 1:",
+    "        return a",
+    "    even = fft(a[0::2])",
+    "    odd = fft(a[1::2])",
+    "    ang = 2 * cmath.pi / n",
+    "    w = 1",
+    "    wn = cmath.exp(ang * 1j)",
+    "    y = [0] * n",
+    "    for k in range(n // 2):",
+    "        y[k] = even[k] + w * odd[k]",
+    "        y[k + n // 2] = even[k] - w * odd[k]",
+    "        w *= wn",
+    "    return y"
+],
+"additional_information": "Recursive Cooley–Tukey FFT requires n to be a power of two (zero-pad otherwise). Widely used for polynomial multiplication and signal processing."
+}
