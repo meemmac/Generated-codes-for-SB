@@ -1,0 +1,24 @@
+{
+"title": "Counting Sort",
+"subtitle": "Sort integers by counting occurrences of each value",
+"time_complexity": "O(N + K)",
+"space_complexity": "O(K)",
+"category": "Sorting / Non-comparison",
+"code": [
+    "def counting_sort(arr):",
+    "    if not arr:",
+    "        return []",
+    "    max_val = max(arr)",
+    "    count = [0] * (max_val + 1)",
+    "",
+    "    for num in arr:",
+    "        count[num] += 1",
+    "",
+    "    result = []",
+    "    for i, c in enumerate(count):",
+    "        result.extend([i] * c)",
+    "",
+    "    return result"
+],
+"additional_information": "Counting Sort is efficient for sorting integers within a limited range and is stable if implemented carefully."
+}
