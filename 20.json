@@ -1,0 +1,19 @@
+{
+"title": "Coin Change (Number of Ways)",
+"subtitle": "Count the number of ways to make a target amount using given coins",
+"time_complexity": "O(N × M)",
+"space_complexity": "O(N)",
+"category": "Dynamic Programming",
+"code": [
+    "def coin_change_ways(coins, amount):",
+    "    dp = [0] * (amount + 1)",
+    "    dp[0] = 1",
+    "",
+    "    for coin in coins:",
+    "        for x in range(coin, amount + 1):",
+    "            dp[x] += dp[x - coin]",
+    "",
+    "    return dp[amount]"
+],
+"additional_information": "This variant of the coin change problem counts all possible combinations of coins to reach the target amount."
+}
