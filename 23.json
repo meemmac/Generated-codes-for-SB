@@ -1,0 +1,28 @@
+{
+"title": "Binary Indexed Tree (Fenwick Tree)",
+"subtitle": "Efficient prefix sum and update queries on arrays",
+"time_complexity": "O(log N) per query/update",
+"space_complexity": "O(N)",
+"category": "Data Structure",
+"code": [
+    "class FenwickTree:",
+    "    def __init__(self, size):",
+    "        self.tree = [0] * (size + 1)",
+    "        self.size = size",
+    "",
+    "    def update(self, index, value):",
+    "        index += 1",
+    "        while index <= self.size:",
+    "            self.tree[index] += value",
+    "            index += index & -index",
+    "",
+    "    def query(self, index):",
+    "        index += 1",
+    "        result = 0",
+    "        while index > 0:",
+    "            result += self.tree[index]",
+    "            index -= index & -index",
+    "        return result"
+],
+"additional_information": "Fenwick Tree is ideal for dynamic cumulative frequency computations and prefix sums with low memory overhead."
+}
