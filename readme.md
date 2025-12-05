@@ -57,4 +57,12 @@ Algorithm List
 55. Boyer–Moore (Bad Character + Good Suffix)
 56. PageRank (Power Iteration)
 57. Meet-in-the-Middle (Subset Sum / Cryptographic Technique)
+58. Edmonds-Karp Algorithm (Max Flow)
+59. Dinic's Algorithm (Max Flow)
+60. Kosaraju’s Algorithm (Strongly Connected Components)
+61. Johnson’s Algorithm (All-Pairs Shortest Paths)
+62. Hungarian Algorithm (Assignment Problem / Minimum Cost Matching)
+63. Gale-Shapley Algorithm (Stable Marriage Problem)
+64. Boykov-Kolmogorov Algorithm (Graph Cuts / Min-Cut)
+65. Hopcroft-Karp Algorithm (Maximum Bipartite Matching)
 ```
