@@ -1,0 +1,28 @@
+{
+"title": "Chinese Remainder Theorem (CRT)",
+"subtitle": "Find unique solution modulo product of coprime moduli",
+"time_complexity": "O(N log M) where M is the product of moduli",
+"space_complexity": "O(1)",
+"category": "Number Theory",
+"code": [
+    "def extended_gcd(a, b):",
+    "    if b == 0:",
+    "        return (a, 1, 0)",
+    "    g, x1, y1 = extended_gcd(b, a % b)",
+    "    x = y1",
+    "    y = x1 - (a // b) * y1",
+    "    return (g, x, y)",
+    "",
+    "def chinese_remainder_theorem(a, m):",
+    "    x = 0",
+    "    M = 1",
+    "    for mi in m:",
+    "        M *= mi",
+    "    for ai, mi in zip(a, m):",
+    "        Mi = M // mi",
+    "        g, inv, _ = extended_gcd(Mi, mi)",
+    "        x += ai * inv * Mi",
+    "    return x % M"
+],
+"additional_information": "CRT finds x such that x ≡ a[i] mod m[i] for multiple congruences."
+}
