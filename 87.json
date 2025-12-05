@@ -1,0 +1,18 @@
+{
+"title": "Scapegoat Tree",
+"subtitle": "Self-balancing binary search tree using partial rebuilding",
+"time_complexity": "O(log N) amortized per operation",
+"space_complexity": "O(N)",
+"category": "Data Structure / BST",
+"code": [
+    "class Node:",
+    "    def __init__(self, key):",
+    "        self.key = key",
+    "        self.left = None",
+    "        self.right = None",
+    "        self.size = 1",
+    "# Insert, delete, rebuild functions go here; maintain subtree sizes to check balance",
+    "# If a node violates balance factor, rebuild its subtree to maintain overall balance"
+],
+"additional_information": "Scapegoat trees maintain balance by rebuilding subtrees that become too large. Provides simpler balancing than AVL/Red-Black trees."
+}
