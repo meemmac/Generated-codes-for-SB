@@ -40,4 +40,21 @@ Algorithm List
 38. Z Algorithm
 39. Manacher’s Algorithm
 40. Topological Sort (DFS)
+41. Sieve of Eratosthenes
+42. Miller–Rabin Primality Test
+43. Pollard's Rho (Integer Factorization)
+44. Karatsuba Multiplication
+45. Fast Fourier Transform (Cooley–Tukey)
+46. Gaussian Elimination
+47. Andrew's Monotone Chain (Convex Hull)
+48. Rotating Calipers (Diameter of Convex Polygon)
+49. Stoer–Wagner Global Minimum Cut
+50. Push–Relabel (Highest Label) Max Flow
+51. Aho–Corasick Automaton
+52. Suffix Array (Doubling Algorithm)
+53. Suffix Automaton
+54. Reservoir Sampling (Algorithm R)
+55. Boyer–Moore (Bad Character + Good Suffix)
+56. PageRank (Power Iteration)
+57. Meet-in-the-Middle (Subset Sum / Cryptographic Technique)
 ```
