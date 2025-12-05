@@ -1,0 +1,30 @@
+{
+"title": "Cocktail Shaker Sort",
+"subtitle": "Bidirectional variant of Bubble Sort that sorts in both directions",
+"time_complexity": "O(N^2) average and worst case, O(N) best case",
+"space_complexity": "O(1)",
+"category": "Sorting",
+"code": [
+    "def cocktail_shaker_sort(arr):",
+    "    n = len(arr)",
+    "    swapped = True",
+    "    start, end = 0, n - 1",
+    "    while swapped:",
+    "        swapped = False",
+    "        for i in range(start, end):",
+    "            if arr[i] > arr[i + 1]:",
+    "                arr[i], arr[i + 1] = arr[i + 1], arr[i]",
+    "                swapped = True",
+    "        if not swapped:",
+    "            break",
+    "        swapped = False",
+    "        end -= 1",
+    "        for i in range(end - 1, start - 1, -1):",
+    "            if arr[i] > arr[i + 1]:",
+    "                arr[i], arr[i + 1] = arr[i + 1], arr[i]",
+    "                swapped = True",
+    "        start += 1",
+    "    return arr"
+],
+"additional_information": "Cocktail Shaker Sort improves upon Bubble Sort by sorting in both directions on each pass, which helps move elements more efficiently to their correct positions."
+}
