@@ -1,0 +1,23 @@
+{
+"title": "Depth-Limited Search (DLS)",
+"subtitle": "Depth-First Search with a maximum depth limit",
+"time_complexity": "O(b^l)",
+"space_complexity": "O(l)",
+"category": "Graph / Search",
+"code": [
+    "def dls(node, target, depth, graph, visited=None):",
+    "    if visited is None:",
+    "        visited = set()",
+    "    if depth < 0:",
+    "        return False",
+    "    if node == target:",
+    "        return True",
+    "    visited.add(node)",
+    "    for neighbor in graph.get(node, []):",
+    "        if neighbor not in visited:",
+    "            if dls(neighbor, target, depth - 1, graph, visited):",
+    "                return True",
+    "    return False"
+],
+"additional_information": "Depth-Limited Search is a variant of DFS used to avoid infinite recursion in graphs or trees with cycles or large depth."
+}
