@@ -1,0 +1,30 @@
+{
+"title": "PageRank (Power Iteration)",
+"subtitle": "Compute PageRank scores of nodes in a directed graph",
+"time_complexity": "O(k * (V + E)) for k iterations",
+"space_complexity": "O(V + E)",
+"category": "Graph Algorithms / Ranking",
+"code": [
+    "def pagerank(adj, damping=0.85, eps=1e-6, max_iter=100):",
+    "    # adj: adjacency list dictionary {u: [v1, v2, ...]}",
+    "    N = len(adj)",
+    "    pr = {u: 1.0 / N for u in adj}",
+    "    outdeg = {u: len(adj[u]) for u in adj}",
+    "    for _ in range(max_iter):",
+    "        new_pr = {u: (1 - damping) / N for u in adj}",
+    "        for u in adj:",
+    "            if outdeg[u] == 0:",
+    "                # distribute sink weight uniformly",
+    "                for v in adj:",
+    "                    new_pr[v] += damping * pr[u] / N",
+    "            else:",
+    "                for v in adj[u]:",
+    "                    new_pr[v] += damping * pr[u] / outdeg[u]",
+    "        diff = sum(abs(new_pr[u] - pr[u]) for u in pr)",
+    "        pr = new_pr",
+    "        if diff < eps:",
+    "            break",
+    "    return pr"
+],
+"additional_information": "Power-iteration method for PageRank. Handle dangling nodes (zero out-degree) by redistributing their rank uniformly."
+}
