@@ -1,0 +1,31 @@
+{
+"title": "Convex Hull Trick (Dynamic Programming Optimization)",
+"subtitle": "Optimize DP of form dp[i] = min(dp[j] + m[j]*x[i] + b[j])",
+"time_complexity": "O(N) for monotone queries, O(N log N) general",
+"space_complexity": "O(N)",
+"category": "DP Optimization / Geometry",
+"code": [
+    "from collections import deque",
+    "class Line:",
+    "    def __init__(self, m, b):",
+    "        self.m = m",
+    "        self.b = b",
+    "    def value(self, x):",
+    "        return self.m * x + self.b",
+    "def is_bad(l1, l2, l3):",
+    "    return (l3.b - l1.b) * (l1.m - l2.m) <= (l2.b - l1.b) * (l1.m - l3.m)",
+    "class ConvexHullTrick:",
+    "    def __init__(self):",
+    "        self.lines = deque()",
+    "    def add_line(self, m, b):",
+    "        new_line = Line(m, b)",
+    "        while len(self.lines) >= 2 and is_bad(self.lines[-2], self.lines[-1], new_line):",
+    "            self.lines.pop()",
+    "        self.lines.append(new_line)",
+    "    def query(self, x):",
+    "        while len(self.lines) >= 2 and self.lines[0].value(x) >= self.lines[1].value(x):",
+    "            self.lines.popleft()",
+    "        return self.lines[0].value(x)"
+],
+"additional_information": "Convex Hull Trick is used to optimize linear DP transitions. Can be implemented using deque for monotone queries."
+}
