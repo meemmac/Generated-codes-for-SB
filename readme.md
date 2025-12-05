@@ -65,4 +65,39 @@ Algorithm List
 63. Gale-Shapley Algorithm (Stable Marriage Problem)
 64. Boykov-Kolmogorov Algorithm (Graph Cuts / Min-Cut)
 65. Hopcroft-Karp Algorithm (Maximum Bipartite Matching)
+66.Cocktail Shaker Sort
+67.Sieve of Sundaram
+68.Sieve of Atkin
+69.Longest Palindromic Substring (Expand Around Center)
+70.Anagram Check (Frequency Map)
+71.Run Length Encoding (RLE)
+72.Rot13 / Caesar Cipher
+73.Fisher–Yates Shuffle (Random Shuffle)
+74.Detect Cycle in Linked List (Floyd’s Tortoise and Hare)
+75.Minimum Path Sum in Grid (DP)
+76.Climbing Stairs / Ways to Reach Nth Step (DP)
+77.Subset DP / Bitmask DP 
+78.Count Islands in Grid (BFS)
+79.Flood Fill Algorithm
+80.Rotting Oranges Problem (BFS)
+81. Binary Lifting (LCA computation)
+82. Heavy-Light Decomposition (HLD)
+83. Mo’s Algorithm (Query on Array)
+84. Sqrt Decomposition (Block Decomposition)
+85. Persistent Segment Tree
+86. Treap (Cartesian Tree)
+87. Scapegoat Tree
+88. Convex Hull Trick (Dynamic Programming Optimization)
+89. Li Chao Segment Tree
+90. Sliding Window Maximum (Deque version)
+91. Sparse Table (RMQ, static range queries)
+92. Fenwick Tree 2D / Multidimensional
+93. Euler Tour Technique (Tree flattening)
+94. Knuth Optimization (Interval DP)
+95. Divide and Conquer Optimization (DP)
+96. Matrix Exponentiation
+97. Fast Walsh-Hadamard Transform (FWHT)
+98. Chinese Remainder Theorem (CRT)
+99. K-th Order Statistics in BST / Treap
+100. Randomized Quickselect
 ```
