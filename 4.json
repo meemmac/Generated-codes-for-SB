@@ -1,0 +1,20 @@
+{
+"title": "Quick Sort",
+"subtitle": "A fast divide-and-conquer sorting algorithm using partitioning",
+"time_complexity": "O(N log N) average, O(N²) worst-case",
+"space_complexity": "O(log N)",
+"category": "Sorting",
+"code": [
+    "def quick_sort(arr):",
+    "    if len(arr) <= 1:",
+    "        return arr",
+    "",
+    "    pivot = arr[len(arr) // 2]",
+    "    left = [x for x in arr if x < pivot]",
+    "    middle = [x for x in arr if x == pivot]",
+    "    right = [x for x in arr if x > pivot]",
+    "",
+    "    return quick_sort(left) + middle + quick_sort(right)"
+],
+"additional_information": "Quick Sort is often the fastest in practice due to in-place partitioning and good cache performance, but its worst case occurs when the pivot selection is poor."
+}
