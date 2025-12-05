@@ -1,0 +1,23 @@
+{
+"title": "Sliding Window Sum",
+"subtitle": "Calculate the sum of every subarray of size k efficiently",
+"time_complexity": "O(N)",
+"space_complexity": "O(1)",
+"category": "Array / Sliding Window",
+"code": [
+    "def sliding_window_sum(nums, k):",
+    "    n = len(nums)",
+    "    if n < k:",
+    "        return []",
+    "",
+    "    window_sum = sum(nums[:k])",
+    "    result = [window_sum]",
+    "",
+    "    for i in range(k, n):",
+    "        window_sum += nums[i] - nums[i - k]",
+    "        result.append(window_sum)",
+    "",
+    "    return result"
+],
+"additional_information": "Sliding window technique avoids recomputation by adjusting the sum incrementally as the window moves through the array."
+}
