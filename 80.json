@@ -1,0 +1,33 @@
+{
+"title": "Rotting Oranges Problem (BFS)",
+"subtitle": "Calculate minimum time to rot all oranges in a grid",
+"time_complexity": "O(M*N)",
+"space_complexity": "O(M*N)",
+"category": "Graphs / BFS",
+"code": [
+    "from collections import deque",
+    "def oranges_rotting(grid):",
+    "    m, n = len(grid), len(grid[0])",
+    "    queue = deque()",
+    "    fresh = 0",
+    "    for i in range(m):",
+    "        for j in range(n):",
+    "            if grid[i][j] == 2:",
+    "                queue.append((i, j, 0))",
+    "            elif grid[i][j] == 1:",
+    "                fresh += 1",
+    "    directions = [(0,1),(1,0),(-1,0),(0,-1)]",
+    "    time = 0",
+    "    while queue:",
+    "        x, y, t = queue.popleft()",
+    "        time = max(time, t)",
+    "        for dx, dy in directions:",
+    "            nx, ny = x + dx, y + dy",
+    "            if 0 <= nx < m and 0 <= ny < n and grid[nx][ny] == 1:",
+    "                grid[nx][ny] = 2",
+    "                fresh -= 1",
+    "                queue.append((nx, ny, t+1))",
+    "    return time if fresh == 0 else -1"
+],
+"additional_information": "BFS is used to simulate the spread of rot over time. Each BFS level corresponds to one minute passing."
+}
