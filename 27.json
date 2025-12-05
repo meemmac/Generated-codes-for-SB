@@ -1,0 +1,25 @@
+{
+"title": "Quick Select",
+"subtitle": "Find the k-th smallest (or largest) element in an unsorted array",
+"time_complexity": "O(N) average, O(N²) worst-case",
+"space_complexity": "O(1)",
+"category": "Selection / Divide and Conquer",
+"code": [
+    "def quick_select(arr, k):",
+    "    if len(arr) == 1:",
+    "        return arr[0]",
+    "",
+    "    pivot = arr[len(arr) // 2]",
+    "    left = [x for x in arr if x < pivot]",
+    "    middle = [x for x in arr if x == pivot]",
+    "    right = [x for x in arr if x > pivot]",
+    "",
+    "    if k <= len(left):",
+    "        return quick_select(left, k)",
+    "    elif k <= len(left) + len(middle):",
+    "        return pivot",
+    "    else:",
+    "        return quick_select(right, k - len(left) - len(middle))"
+],
+"additional_information": "Quick Select uses a partitioning approach similar to Quick Sort to efficiently find the k-th order statistic without fully sorting the array."
+}
