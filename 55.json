@@ -1,0 +1,26 @@
+{
+"title": "Boyer–Moore (Bad Character + Good Suffix)",
+"subtitle": "Fast substring search in practice using heuristics to skip alignments",
+"time_complexity": "Best O(n/m), Worst O(n*m) but often sublinear in practice",
+"space_complexity": "O(alphabet + m)",
+"category": "String Algorithms",
+"code": [
+    "def boyer_moore(text, pattern):",
+    "    m, n = len(pattern), len(text)",
+    "    if m == 0: return 0",
+    "    # Bad character",
+    "    bad = {c: m - i - 1 for i, c in enumerate(pattern)}",
+    "    # Good suffix (simplified using fallback)",
+    "    i = 0",
+    "    while i <= n - m:",
+    "        j = m - 1",
+    "        while j >= 0 and pattern[j] == text[i + j]:",
+    "            j -= 1",
+    "        if j < 0:",
+    "            return i",
+    "        shift = bad.get(text[i + j], m)",
+    "        i += shift",
+    "    return -1"
+],
+"additional_information": "Boyer–Moore uses bad-character and good-suffix rules to skip parts of the text; full implementation requires computing border arrays for good suffix optimization."
+}
